@@ -314,7 +314,7 @@ contract PodFast is Initializable, IERC20Upgradeable, OwnableUpgradeable {
         return (rAmount, rTransferAmount, rFee);
     }
 
-    function _getRate() public view returns (uint256) {
+    function _getRate() private view returns (uint256) {
         (uint256 rSupply, uint256 tSupply) = _getCurrentSupply();
         return rSupply.div(tSupply);
     }
